@@ -6,32 +6,26 @@
 		<script>			
 			$(document).ready(function()
 			{
-			    if (typeof (Worker) !== "undefined") {
 			        var acc1 = new Worker("val.js");
-			        acc1.onmessage = function (info) {
+			        acc1.onmessage = function (event) {
 			            document.getElementById("acc1").innerHTML = event.data;
 			        };
 			        var acc2 = new Worker("val.js");
-			        acc2.onmessage = function (info) {
+			        acc2.onmessage = function (event) {
 			            document.getElementById("acc2").innerHTML = event.data;
 			        };
 			        var acc3 = new Worker("val.js");
-			        acc3.onmessage = function (info) {
+			        acc3.onmessage = function (event) {
 			            document.getElementById("acc3").innerHTML = event.data;
 			        };
 			        var acc4 = new Worker("val.js");
-			        acc4.onmessage = function (info) {
+			        acc4.onmessage = function (event) {
 			            document.getElementById("acc4").innerHTML = event.data;
 			        };
 			        var timer = new Worker("timer.js");
-			        timer.onmessage = function (info) {
+			        timer.onmessage = function (event) {
 			            document.getElementById("timer").innerHTML = event.data;
 			        };
-			    }
-			    else
-			    {
-			        window.alert("Obsluga webworkerow nie jest dostepna :(");
-			    }
 			});
 		</script>
 	</head>
